@@ -1,6 +1,6 @@
-# electron-quick-start
+# E-Voting system for UNIBEN
 
-**Clone and run for a quick way to see Electron in action.**
+**Easy to use voting software to run anywhere**
 
 This is a minimal Electron application based on the [Quick Start Guide](https://electronjs.org/docs/tutorial/quick-start) within the Electron documentation.
 
