@@ -1,20 +1,19 @@
 {
-  "name": "electron-quick-start",
+  "name": "e-voting-system",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "A desktop based voting application",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/valike23/e-voting",
   "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "e-voting",
+    "uniben",
+    "security",
+    "speed"
   ],
-  "author": "GitHub",
+  "author": "valentine emmanuel ikechukwu",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^8.0.0"
