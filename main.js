@@ -1,10 +1,17 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow} = require('electron')
-const path = require('path')
+const path = require('path');
+const settings = require("./main/fileWorks");
+const ipc = require("electron").ipcMain;
 
+ipc.on("load-run-data", function(event, arg){
+  let file = settings.settings();
+  
+  event.returnValue = file;
+  })
 function createWindow () {
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
+  const loginWindow = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
@@ -13,7 +20,7 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
+  loginWindow.loadFile('index.html')
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
