@@ -1,0 +1,133 @@
+<div class="container">
+    <div class="row">
+       <div class="span12">
+ 
+          <p>Here a table styled</p>
+ 
+          <div id="content-filters" class="row">
+             <div class="span12">
+                <ul class="nav nav-pills">
+                   <li class="dropdown">
+                      <a class="dropdown-toggle accent-color" data-toggle="dropdown" href="#">
+                         All projects
+                         <b class="caret" href="#"></b>
+                      </a>
+                      <ul id="projects-filter" class="dropdown-menu">
+                         <li><a href="#">All projects</a></li>
+                         <li><a href="#">ACME</a></li>
+                         <li><a href="#">Surface</a></li>
+                         <li><a href="#">OSX</a></li>
+                         <li><a href="#">WinRT</a></li>
+                      </ul>
+                   </li>
+                   <li class="dropdown">
+                      <a class="dropdown-toggle accent-color" data-toggle="dropdown" >
+                         All budgets
+                         <b class="caret" href="#"></b>
+                      </a>
+                      <ul id="budget-filter" class="dropdown-menu">
+                         <li><a href="#">All budgets</a></li>
+                         <li><a href="#">Budget &lt; 1.000</a></li>
+                         <li><a href="#">Budget 1.000 - 10.000</a></li>
+                         <li><a href="#">Budget 10.000 - 45.000</a></li>
+                         <li><a href="#">Budget 45.000 - 100.000</a></li>
+                         <li><a href="#">Budget &gt; 100.000</a></li>
+                      </ul>
+                   </li>
+                   <li class="">
+                      <a>&nbsp;|&nbsp;</a><span>Sort by&nbsp;</span>
+                   </li>
+                   <li class="dropdown">
+ 
+                      <a class="dropdown-toggle accent-color" data-toggle="dropdown" href="#">
+                         Project name
+                         <b class="caret" href="#"></b>
+                      </a>
+                      <ul id="sort-filter" class="dropdown-menu">
+                         <li><a href="#">Project name</a></li>
+                         <li><a href="#">Budget Cost</a></li>
+                         <li><a href="#">Duration</a></li>
+                      </ul>
+                   </li>
+                </ul>
+             </div>
+          </div>
+ 
+          <div class="row">
+             <div class="span12">
+ 
+                <table class="table table-condensed table-hover">
+                   <thead>
+                   <tr>
+                      <th class="span1">Editable<br/>Checkboxes</th>
+                     
+                      <th>Matriculation No</th>
+                      <th>First Name</th>
+                      <th >Last Name</th>
+                      <th >Email</th>
+                     
+                   </tr>
+                   </thead>
+                   <tbody>
+                      <tr ng-repeat="student in students">
+                         <td class="align-center">
+                            <label class="checkbox">
+                               <input ng-change="toggle(student)" ng-model="student.checked" type="checkbox"><span class="metro-checkbox"></span>
+                            </label>
+                         </td>
+                       
+                         <td>{{student.matNo}}</td>
+                         <td>{{student.firstname}}</td>
+                         <td >{{student.lastname}}</td>
+                         <td >{{student.email}}</td>
+                        
+                      </tr>
+                     
+                   </tbody>
+                </table>
+ 
+             </div>
+          </div>
+ 
+       </div>
+    </div>
+ </div>
+ 
+ <footer class="win-ui-dark win-commandlayout navbar-fixed-bottom">
+    <div class="container">
+       <div class="row">
+          <div class="span6 align-left">
+             <button class="win-command">
+                <span class="win-commandicon win-commandring icon-search-2"></span>
+                <span class="win-label">Cerca</span>
+             </button>
+ 
+             <hr class="win-command" />
+ 
+             <button ng-click="reload()" class="win-command">
+                <span class="win-commandicon win-commandring icon-reload"></span>
+                <span class="win-label">Reload</span>
+             </button>
+ 
+             <button class="win-command">
+                <span class="win-commandicon win-commandring icon-email"></span>
+                <span class="win-label">Send Email</span>
+             </button>
+          </div>
+          <div class="span6 align-right">
+             <button class="win-command">
+                <span class="win-commandicon win-commandring icon-remove"></span>
+                <span class="win-label">Delete</span>
+             </button>
+ 
+             <button class="win-command" data-toggle="modal" data-target="#studentModal">
+                <span class="win-commandicon win-commandring icon-plus-2"></span>
+                <span class="win-label">Add</span>
+             </button>
+          </div>
+       </div>
+    </div>
+ </footer>   <div id="charms" class="win-ui-dark slide">
+ 
+   
+

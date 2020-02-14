@@ -2,28 +2,62 @@
 const {app, BrowserWindow} = require('electron')
 const path = require('path');
 const settings = require("./main/fileWorks");
+const students = require("./main/students");
 const ipc = require("electron").ipcMain;
-
+let loginWindow;
 ipc.on("load-run-data", function(event, arg){
   let file = settings.settings();
+ 
   
   event.returnValue = file;
+  });
+  ipc.on("loadDash", function(event, arg){
+    createDashbordWindow();
+    loginWindow.close();
+    
+    });
+  ipc.on("loadStudents", function(event, args){
+    let myPromise = new Promise(function(resolve, reject){
+     students.getAllStudents(resolve, reject)
+    })
+  myPromise.then(function(res){
+event.returnValue = res.body;
+  })
+  });
+
+  ipc.on("addStudent", function(event, args){
+    let myPromise = new Promise(function(resolve, reject){
+      students.setStudent(resolve, reject,args)
+     })
+   myPromise.then(function(res){
+ event.returnValue = res;
+   }, function(err){
+event.returnValue = "error";
+   })
   })
 function createWindow () {
   // Create the browser window.
-  const loginWindow = new BrowserWindow({
+   loginWindow = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
+      preload: path.join(__dirname, 'preload.js'),
+      contextIsolation: false
+    }
+  });
+  loginWindow.loadFile('home.html');
+ 
+  // mainWindow.webContents.openDevTools()
+}
+function createDashbordWindow(){
+  const dashboardWindow = new BrowserWindow({
+    width: 2000,
+    height: 1000,
+    webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
-  })
-
-  // and load the index.html of the app.
-  loginWindow.loadFile('index.html')
-
-  // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  });
+  dashboardWindow.loadFile('index.html');
 }
 
 // This method will be called when Electron has finished

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="myApp" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/util.css">
+    <title>Document</title>
+</head>
+<body>
+    <div ng-controller="loginCtrl"  class="limiter">
+        <div class="container-login100">
+          <div class="wrap-login100">
+            <form class="login100-form validate-form">
+              <span class="login100-form-title p-b-43">
+               {{appSettings.appName}}
+              </span>
+              
+              
+              <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                <input class="input100" type="text" name="email">
+                <span class="focus-input100"></span>
+                <span class="label-input100">Email</span>
+              </div>
+              
+              
+              <div class="wrap-input100 validate-input" data-validate="Password is required">
+                <input class="input100" type="password" name="pass">
+                <span class="focus-input100"></span>
+                <span class="label-input100">Password</span>
+              </div>
+    
+             <br>
+          
+    
+              <div class="container-login100-form-btn">
+                <button ng-click="signIn()" class="login100-form-btn">
+                  Login
+                </button>
+              </div>
+              
+              <div class="text-center p-t-46 p-b-20">
+                <span class="txt2">
+                 This application is secured
+                </span>
+              </div>
+    
+              <div class="login100-form-social flex-c-m">
+                <a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">
+                  <i class="fa fa-lock" aria-hidden="true"></i>
+                </a>
+    
+                <a href="#" class="login100-form-social-item flex-c-m bg2 m-r-5">
+                  <i class="fa fa-signal" aria-hidden="true"></i>
+                </a>
+              </div>
+            </form>
+    
+            <div class="login100-more" id="side">
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="./js/angular.js"></script>
+    <script src="./js/angular-ui-router.js"></script>
+    <script src="./renderer.js"></script>
+</body>
+</html>

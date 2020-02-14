@@ -17,5 +17,11 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^8.0.0"
+  },
+  "dependencies": {
+    "generate-password": "^1.5.1",
+    "i": "^0.3.6",
+    "npm": "^6.13.7",
+    "request": "^2.88.2"
   }
 }

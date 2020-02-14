@@ -5,71 +5,141 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/util.css">
-    <link rel="stylesheet" href="./css/bootstrap.css">
+    <!--  -->
+   <!-- <link rel="stylesheet" href="./css/winstrap.css"> -->
+   <link href='./assets/css/font-family.css' rel='stylesheet' type='text/css'>
+
+   <link rel="stylesheet" type="text/css" href="./assets/css/bootmetro.css">
+   <link rel="stylesheet" type="text/css" href="./assets/css/bootmetro-responsive.css">
+   <link rel="stylesheet" type="text/css" href="./assets/css/bootmetro-icons.css">
+   <link rel="stylesheet" type="text/css" href="./assets/css/bootmetro-ui-light.css">
+   <link rel="stylesheet" type="text/css" href="./assets/css/datepicker.css">
+
+   <!--  these two css are to use only for documentation -->
+   <link rel="stylesheet" type="text/css" href="assets/css/demo.css">
     <link rel="stylesheet" href="./fonts/font-awesome-4.7.0/css/font-awesome.css">
     <title>{{appSettings.appName}}</title>
   </head>
   <body >
-    <div class="limiter">
-      <div class="container-login100">
-        <div class="wrap-login100">
-          <form class="login100-form validate-form">
-            <span class="login100-form-title p-b-43">
-             {{appSettings.appName}}
-            </span>
-            
-            
-            <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-              <input class="input100" type="text" name="email">
-              <span class="focus-input100"></span>
-              <span class="label-input100">Email</span>
-            </div>
-            
-            
-            <div class="wrap-input100 validate-input" data-validate="Password is required">
-              <input class="input100" type="password" name="pass">
-              <span class="focus-input100"></span>
-              <span class="label-input100">Password</span>
-            </div>
   
-           <br>
-        
-  
-            <div class="container-login100-form-btn">
-              <button class="login100-form-btn">
-                Login
-              </button>
-            </div>
-            
-            <div class="text-center p-t-46 p-b-20">
-              <span class="txt2">
-               This application is secured
-              </span>
-            </div>
-  
-            <div class="login100-form-social flex-c-m">
-              <a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">
-                <i class="fa fa-lock" aria-hidden="true"></i>
-              </a>
-  
-              <a href="#" class="login100-form-social-item flex-c-m bg2 m-r-5">
-                <i class="fa fa-signal" aria-hidden="true"></i>
-              </a>
-            </div>
-          </form>
-  
-          <div class="login100-more" id="side">
+    <div >
+    
+   <div id="wrap">
+   
+    <!-- Header
+    ================================================== -->
+    <div id="nav-bar" class="">
+       <div class="pull-left">
+          <div id="header-container">
+            <a id="backbutton" class="win-backbutton" ui-sref="dashboard"></a>
+             <h5>{{appSettings.appName}}</h5>
+             <div class="dropdown">
+                <a class="header-dropdown dropdown-toggle accent-color" data-toggle="dropdown" href="#">
+                 {{title}}
+                   <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                <li><a href="./metro-layouts.html">Metro Layouts</a></li>
+                <li><a href="./hub.html">Hub</a></li>
+                <li><a href="./tiles-templates.html">Tile Templates</a></li>
+                <li><a href="./listviews.html">ListViews</a></li>
+                <li><a href="./appbar-demo.html">App-Bar Demo</a></li>
+                <li><a href="./table.html">Table Demo</a></li>
+                <li><a href="./wizard.html">Wizard</a></li>
+                <li><a href="./icons.html">Icons</a></li>
+                <li><a href="./toast.html">Toast Notifications</a></li>
+                <li><a href="./pivot.html">Pivot</a></li>
+                <li><a href="./metro-components.html">Metro Components</a></li>
+                <li class="divider"></li>
+                <li><a href="./scaffolding.html">Bootstrap Scaffolding</a></li>
+                <li><a href="./base-css.html">Bootstrap Base CSS</a></li>
+                <li><a href="./components.html">Bootstrap Components</a></li>
+                <li><a href="./javascript.html">Bootstrap Javascript</a></li>
+                <li class="divider"></li>
+                <li><a href="./index.html">Home</a></li>
+             </ul>
           </div>
-        </div>
-      </div>
+          </div>
+       </div>
+       <div class="pull-right">
+          <div id="top-info" class="pull-right">
+          <a id="settings" href="#" class="win-command pull-right">
+             <span class="win-commandicon win-commandring icon-cog-3"></span>
+          </a>
+          <a id="logged-user" href="#" class="win-command pull-right">
+             <span class="win-commandicon win-commandring icon-user"></span>
+          </a>
+          <div class="pull-left">
+             <h3>Admin</h3>
+             <h4>{{email}}</h4>
+          </div>
+       </div>
     </div>
-    
-    
+    </div>
+
+
+ 
+ </div>
+
+ <ui-view>
+
+</ui-view>
+<div id="studentModal" class="modal hide fade" ng-controller="studentCtrl">
+   <div class="modal-header">
+     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+     <h3>Add Student</h3>
+   </div>
+   <div class="modal-body">
+      <form class="form-horizontal">
+         <div class="control-group">
+            <label class="control-label" for="inputFirst">First Name</label>
+            <div class="controls">
+               <input type="text" id="inputFirst" placeholder="First Name" ng-model="user.firstname">
+            </div>
+         </div>
+         <div class="control-group">
+            <label class="control-label" for="inputLast">Last Name</label>
+            <div class="controls">
+               <input type="text" id="inputLast" placeholder="Last Name" ng-model="user.lastname">
+            </div>
+         </div>
+         <div class="control-group">
+            <label class="control-label" for="MatNo">Mat No</label>
+            <div class="controls">
+               <input type="text" id="MatNo" ng-model="user.matNo" placeholder="Matriculation Number">
+            </div>
+         </div>
+         <div class="control-group">
+            <label class="control-label" for="inputEmail">Email</label>
+            <div class="controls">
+               <input type="text" id="inputEmail" ng-model="user.email" placeholder="Email">
+            </div>
+         </div>
+      </form>
+   </div>
+   <div class="modal-footer">
+     
+     <a ng-click="submitStudent()" class="btn btn-primary">submit Student</a>
+   </div>
+ </div>
+    </div>
+    <script type="text/javascript" src="./assets/js/jquery.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="./assets/js/bootmetro-panorama.js"></script>
+    <script type="text/javascript" src="./assets/js/bootmetro-pivot.js"></script>
+    <script type="text/javascript" src="./assets/js/bootmetro-charms.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap-datepicker.js"></script>
+ 
+    <script type="text/javascript" src="./assets/js/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery.touchSwipe.min.js"></script>
+ 
+    <script type="text/javascript" src="./assets/js/holder.js"></script>
+    <!--<script type="text/javascript" src="assets/js/perfect-scrollbar.with-mousewheel.min.js"></script>-->
+    <script type="text/javascript" src="./assets/js/demo.js"></script>
   
     <!-- You can also require other files to run in this process -->
     <script src="./js/angular.js"></script>
+    <script src="./js/angular-ui-router.js"></script>
     <script src="./renderer.js"></script>
   </body>
 </html>
