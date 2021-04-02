@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html ng-app="voteApp">
   <head>
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
@@ -51,8 +51,8 @@
              <span class="win-commandicon win-commandring icon-user"></span>
           </a>
           <div class="pull-left">
-             <h3>Admin</h3>
-             <h4>{{email}}</h4>
+             <h3>{{user.firstname + " " + user.lastname}}</h3>
+             <h4>{{user.email}}</h4>
           </div>
        </div>
     </div>
@@ -62,80 +62,10 @@
  
  </div>
 
- <ui-view>
+ <ui-view style="width:100vh">
 
 </ui-view>
-<div id="studentModal" class="modal hide fade" ng-controller="studentCtrl">
-   <div class="modal-header">
-     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-     <h3>Add Student</h3>
-   </div>
-   <div class="modal-body">
-      <form class="form-horizontal">
-         <div class="control-group">
-            <label class="control-label" for="inputFirst">First Name</label>
-            <div class="controls">
-               <input type="text" id="inputFirst" placeholder="First Name" ng-model="user.firstname">
-            </div>
-         </div>
-         <div class="control-group">
-            <label class="control-label" for="inputLast">Last Name</label>
-            <div class="controls">
-               <input type="text" id="inputLast" placeholder="Last Name" ng-model="user.lastname">
-            </div>
-         </div>
-         <div class="control-group">
-            <label class="control-label" for="MatNo">Mat No</label>
-            <div class="controls">
-               <input type="text" id="MatNo" ng-model="user.matNo" placeholder="Matriculation Number">
-            </div>
-         </div>
-         <div class="control-group">
-            <label class="control-label" for="inputEmail">Email</label>
-            <div class="controls">
-               <input type="text" id="inputEmail" ng-model="user.email" placeholder="Email">
-            </div>
-         </div>
-      </form>
-   </div>
-   <div class="modal-footer">
-     
-     <a ng-click="submitStudent()" class="btn btn-primary">submit Student</a>
-   </div>
- </div>
- <div id="positionModal" class="modal hide fade" ng-controller="positionCtrl">
-   <div class="modal-header">
-     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-     <h3>Add Position</h3>
-   </div>
-   <div class="modal-body">
-      <form class="form-horizontal">
-         <div class="control-group">
-            <label class="control-label" for="inputFirst">position</label>
-            <div class="controls">
-               <input type="text" id="inputFirst" placeholder="position" ng-model="position.position">
-            </div>
-         </div>
-        
-       
-      
-      </form>
-   </div>
-   <div class="modal-footer">
-     
-     <a ng-click="submitPosition()" class="btn btn-primary">submit Position</a>
-   </div>
- </div>
- <div id="viewModal" class="modal hide fade" ng-controller="candidateCtrl">
-   <div class="modal-header">
-     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-     <h3>{{candidate.firstname + " " + candidate.lastname}}</h3>
-   </div>
-   <div class="modal-body">
- <img ng-src="{{candidate.image}}" id="candidateImage" />
-   </div>
-   
- </div>
+
     </div>
     <script type="text/javascript" src="./assets/js/jquery.js"></script>
     <script type="text/javascript" src="./assets/js/bootstrap.js"></script>

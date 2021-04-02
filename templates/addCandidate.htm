@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="span4">
+            <img src="http://localhost:2020/images/woman.png" alt="black avatar" >
+            <button class="btn btn-block btn-primary" ng-click="selectImage()">Choose Image</button>
+        </div>
+        <div class="span8">
+            <form>
+                <div class="row">
+                    <div class="span12">
+<label>First Name</label>
+<input class="input-xlarge" ng-model="user.firstname" type="text" value=""><span class="help-inline">Enter his First Name</span>
+                    </div>
+                    <div class="span12">
+                        <label>Last Name</label>
+                        <input class="input-xlarge" ng-model="user.lastname" type="text" value=""><span class="help-inline">Enter his Last Name</span>
+                     </div>
+                     <div class="span12">
+                        <label>Matriculation Number</label>
+                        <input class="input-xlarge" ng-model="user.matNo" type="text" value=""><span class="help-inline">Enter his Matriculation Number</span>
+                     </div>
+                     <div class="span12">
+                        <label>Position</label>
+                        <select  class="input-xlarge" ng-model="user.position" type="text" >
+<option value='{{position.id}}' ng-repeat="position in positions">{{position.position}}</option>
+                            </select>
+                            <span class="help-inline">What Position is he applying for?</span>
+                     </div>
+                </div>
+            </form>
+        </div>
+      </div>
+      <br/><br/>
+      <button class="btn btn-block btn-primary" ng-click="upload()">submit</button>
+</div>

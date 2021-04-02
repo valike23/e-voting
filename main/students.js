@@ -33,6 +33,17 @@ setStudent: function(resolve, reject, args){
              resolve(res);
  return;
     })
-}
+},
+login: function(resolve, reject, args){
+    console.log("studentjs line 38");
+    request.post(settings.url + "/studentLogin", {json:true, body:args},function(err, res, body){
+        if (err) {  console.log(err);
+            reject(err);
+    return;
+             }
+             resolve(res);
+    return;
+    })
+ }
 }
 module.exports= students;

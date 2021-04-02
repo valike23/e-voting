@@ -8097,9 +8097,9 @@ Progress control. */
 .metro .tile .text-header3 {
   max-height: 110px;
   overflow: hidden;
-  font-size: 34px;
+  font-size: 24px;
   font-weight: 300;
-  line-height: 36px;
+  line-height: 26px;
   text-align: left;
 }
 
@@ -8283,17 +8283,17 @@ Progress control. */
 }
 
 .metro .tile.wide.imagetext {
-  width: 270px;
-  height: 110px;
-  padding: 20px;
+  width: 250px;
+  height: 90px;
+  padding: 10px;
 }
 
 .metro .tile.wide.imagetext .image-wrapper {
   display: block;
   float: left;
-  width: 80px;
-  height: 80px;
-  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
 }
 
 .metro .tile.wide.imagetext .image-wrapper img {
@@ -8303,8 +8303,8 @@ Progress control. */
 
 .metro .tile.wide.imagetext .column-text {
   display: block;
-  float: left;
-  width: 180px;
+  float: right;
+  width: 150px;
 }
 
 .metro .tile.wide.image {
@@ -8505,11 +8505,11 @@ Progress control. */
 }
 
 .metro-responsive-tiles .tile .column-text .text-header3 {
-  max-height: 110px;
+  max-height: 100px;
   overflow: hidden;
-  font-size: 34px;
+  font-size: 10px;
   font-weight: 300;
-  line-height: 36px;
+  line-height: 30px;
   text-align: left;
 }
 

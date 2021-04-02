@@ -4,6 +4,8 @@
   "description": "A desktop based voting application",
   "main": "main.js",
   "scripts": {
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
     "start": "electron ."
   },
   "repository": "https://github.com/valike23/e-voting",
@@ -16,12 +18,34 @@
   "author": "valentine emmanuel ikechukwu",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^8.0.0"
+    "electron": "^8.0.0",
+    "electron-builder": "^22.3.2",
+    "electron-packager": "^14.2.1"
   },
   "dependencies": {
     "generate-password": "^1.5.1",
     "i": "^0.3.6",
     "npm": "^6.13.7",
     "request": "^2.88.2"
+  },
+  "build": {
+    "appId": "com.teknocrats.election-uniben-vote",
+    "copyright": "Copyright © 2020 Valentine Emmanuel",
+    "productName": "E - Voting app",
+    "electronVersion": "1.4.1",
+    "mac": {
+      "category": "public.app-category.developer-tools"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    }
   }
 }

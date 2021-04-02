@@ -1,0 +1,59 @@
+<div class="container" style="width:100%; margin-left:-40px">
+    <div class="row">
+       <div class="metro span12">
+          <div class="metro-sections">
+ 
+             <div ng-repeat="position in positions" class="metro-section" id="section1">
+ 
+                <a  class="{{position.class }}" >
+                   <div class="image-wrapper">
+                      <img src="{{appSettings.url + position.image}}">
+                   </div>
+                   <div class="column-text">
+                      <div class="text-header3">{{position.position}}</div>
+                   </div>
+                </a>
+ 
+                
+ 
+             </div>
+ 
+          </div>
+       </div>
+    </div>
+    <footer class="win-ui-dark win-commandlayout navbar-fixed-bottom">
+        <div class="container">
+           <div class="row">
+              <div class="span6 align-left">
+                 <button class="win-command">
+                    <span class="win-commandicon win-commandring icon-search-2"></span>
+                    <span class="win-label">Cerca</span>
+                 </button>
+     
+                 <hr class="win-command" />
+     
+                 <button ng-click="reload()" class="win-command">
+                    <span class="win-commandicon win-commandring icon-reload"></span>
+                    <span class="win-label">Reload</span>
+                 </button>
+     
+                 <button class="win-command">
+                    <span class="win-commandicon win-commandring icon-email"></span>
+                    <span class="win-label">Send Email</span>
+                 </button>
+              </div>
+              <div class="span6 align-right">
+                 <button class="win-command">
+                    <span class="win-commandicon win-commandring icon-remove"></span>
+                    <span class="win-label">Delete</span>
+                 </button>
+     
+                 <button class="win-command" ui-sref="addCandidate">
+                    <span class="win-commandicon win-commandring icon-plus-2"></span>
+                    <span class="win-label">Add</span>
+                 </button>
+              </div>
+           </div>
+        </div>
+     </footer>
+ </div>

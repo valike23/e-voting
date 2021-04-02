@@ -1,0 +1,16 @@
+directories:
+  output: dist
+  buildResources: build
+appId: com.teknocrats.election-uniben-vote
+copyright: Copyright © 2020 Valentine Emmanuel
+productName: E - Voting app
+electronVersion: 1.4.1
+mac:
+  category: public.app-category.developer-tools
+win:
+  target:
+    - nsis
+linux:
+  target:
+    - AppImage
+    - deb
